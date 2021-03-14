@@ -12,6 +12,11 @@ from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit import print_formatted_text as print
 from pygments.lexers import BashLexer
 
+if len(sys.argv) == 1:
+    print(HTML('<ansired><b>Need arguments!</b></ansired>'))
+    print(HTML(f'Example: <ansiblue><b>{sys.argv[0]} print time</b></ansiblue>'))
+    sys.exit(1)
+
 searchText = " ".join(sys.argv[1:])
 
 # Must be Stack Exchange sites
