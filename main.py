@@ -62,8 +62,13 @@ def fetchCommand(url):
     if len(code_blocks) == 0:
         return
 
+    first_res = code_blocks[0].get_text().strip().split('\n',maxsplit=1)[0]
+
+    if subprocess.run(['command', '-v', first_res.split(' ',maxsplit=1)[0]], capture_output=True).returncode != 0:
+        return
+
     # Get the text in the first code block
-    return title, code_blocks[0].get_text().strip()
+    return title, first_res
 
 try:
     print(HTML('<ansigreen><b>Searching...</b></ansigreen>'), end='')
