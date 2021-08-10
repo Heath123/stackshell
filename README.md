@@ -1,5 +1,5 @@
 # stackshell
-Automatically search Stack Overflow (and other Stack Exchange sites) for the command you want to ru
+Automatically search Stack Overflow (and other Stack Exchange sites) for the command you want to run
 
 Use the up and down arrows to change between different results
 
